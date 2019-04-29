@@ -1,0 +1,17 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: podinfo
+  namespace: default
+  annotations:
+    flux.weave.works/automated: "false"
+spec:
+  releaseName: podinfo-dev
+  chart:
+    git: git@github.com:jaksonwkr/flux-demo.git
+    path: charts/podinfo
+    ref: master
+  values:
+    image:
+      repository: quay.io/stefanprodan/podinfo
+      tag: 1.4.4
