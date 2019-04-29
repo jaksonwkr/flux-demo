@@ -5,6 +5,7 @@ metadata:
   namespace: default
   annotations:
     flux.weave.works/automated: "false"
+    flux.weave.works/tag.chart-image: semver:~1.5
 spec:
   releaseName: podinfo-dev
   chart:
